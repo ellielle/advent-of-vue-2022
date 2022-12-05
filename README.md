@@ -1,8 +1,4 @@
-# Advent Of Vue 2022
-
-## If you didn't get here from an email, read this section! Skip it otherwise.
-
-[Advent Of Vue](https://adventofvue.com) is a series of 24 Vue coding challenges that are sent out every day from December 1 to December 24 via [a dedicated newsletter](https://www.getrevue.co/profile/AdventOfVue). If you'd like to receive more of these puzzles in the future, go ahead and sign up!
+# My solution for day 2.
 
 ## Problem description
 
@@ -12,7 +8,7 @@ We all can use a little bit more joy in our lives. So it's time to tell jokes!
 - First, render the setup text.
 - Then, add a `Tell Me!` button that we can click to reveal the delivery text.
 - After revealing the delivery text, render an `Another` button which loads the next joke.
-- Hint: you can look at the `./src/App.spec.js` file to see a specification of the desired outcome.
+- Hint: you can look at the `./src/App.spec.ts` file to see a specification of the desired outcome.
 - Hint: you can run the tests with `npm run test` to see if your solution matches the specification.
 
 ## Example of a solution in action

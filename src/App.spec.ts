@@ -2,6 +2,7 @@ import { cleanup, configure, fireEvent, render } from '@testing-library/vue'
 import { rest } from 'msw'
 import { afterEach, beforeEach, expect, it } from 'vitest'
 
+// @ts-ignore
 import { server } from '../test/mock-server'
 import App from './App.vue'
 
