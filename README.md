@@ -1,4 +1,4 @@
-# Advent Of Vue 2022
+# Solution for day 4
 
 ## If you didn't get here from an email, read this section! Skip it otherwise.
 
