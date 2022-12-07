@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import ChristmasTree from './ChristmasTree.vue'
+import ChristmasTree from "./ChristmasTree.vue";
 </script>
