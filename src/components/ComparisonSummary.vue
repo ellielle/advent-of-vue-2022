@@ -1,5 +1,11 @@
+<script setup lang="ts">
+interface Props {
+  message: string;
+}
+
+defineProps<Props>();
+</script>
+
 <template>
-  <p class="mx-5 text-center">
-    You can get <strong>n</strong> <em>X items</em> for about the same price as a single <em>Y item</em>
-  </p>
+  <p class="mx-5 text-center">{{ message }}</p>
 </template>
