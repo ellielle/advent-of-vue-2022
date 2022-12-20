@@ -1,74 +1,60 @@
 <script setup lang="ts">
-import { ref } from "@vue/runtime-core";
+import { computed } from "@vue/runtime-core";
 import { useI18n } from "vue-i18n";
 
-const { d, locale } = useI18n();
-const flagToDisplay = ref<string>("i-twemoji-flag-united-kingdom");
+const { t, d, availableLocales, locale } = useI18n();
+const updateLocaleFlag = computed(() => {
+  return {
+    "en": "i-twemoji-flag-united-kingdom",
+    "ja-JP": "i-twemoji-flag-japan",
+    "de": "i-twemoji-flag-germany"
+  }[locale.value];
+});
 const christmasDate = new Date("2022/12/25");
-const daysUntilChristmas = ((Date.parse(christmasDate) - new Date(Date.now())) /
-  Math.floor(1000 * 60 * 60 * 24)).toFixed(0);
+const timeUntilChristmas = Math.floor((new Date("2022/12/25") - Date.now()) /
+  (1000 * 60 * 60 * 24));
 
-const handleLocaleChange = (newLocale: string) => {
-  flagToDisplay.value = newLocale;
-  locale.value = getLocale(newLocale)!;
-};
-
-const flags = ["i-twemoji-flag-germany",
-  "i-twemoji-flag-japan",
-  "i-twemoji-flag-united-kingdom"];
-
-const getLocale = (flag: string) => {
+const localeFlags = (newLocale: string) => {
   return {
-    "i-twemoji-flag-united-kingdom": "en",
-    "i-twemoji-flag-japan": "ja-JP",
-    "i-twemoji-flag-germany": "de"
-  }[flag];
+    "en": "i-twemoji-flag-united-kingdom",
+    "ja-JP": "i-twemoji-flag-japan",
+    "de": "i-twemoji-flag-germany"
+  }[newLocale];
 };
-
-const getLanguage = (locale: string) => {
-  return {
-    "en": "English",
-    "de": "Deutsch",
-    "ja-JP": "日本語"
-  }[locale];
-};
-
-// See the README about tricky timezone issues!
-// I figured since this is i18n-friendly, we'd wanna
-// make sure the timezones were right :-)
 </script>
 
 <template>
   <main class="flex flex-col justify-center h-full mx-auto max-w-600px">
     <section class="flex flex-col items-center leading-loose text-center">
-      <div :class="flagToDisplay+' flag'" v-if="flagToDisplay"></div>
+      <div :class="updateLocaleFlag+ ' flag'"></div>
       <div class="text-3xl">
         <span class="i-twemoji-christmas-tree"></span>
-        <span>{{ $t("happyHolidays") }}</span>
+        {{ t("happyHolidays") }}
         <span class="i-twemoji-world-map"></span>
       </div>
-      <div class="text-2xl">
-        {{ $t("christmasIsComing",
-        {
-          date: d(christmasDate),
-          time: $t("day", { count: +daysUntilChristmas })
-        }
-      ) }}!
+
+      <i18n-t keypath="christmasIsComing" tag="span">
+        <template #date>
+          {{ d(christmasDate, "long") }}
+        </template>
+        <template #time>
+          <span class="text-green-600">
+            {{ t('day', timeUntilChristmas) }}
+          </span>
+          !
+        </template>
+      </i18n-t>
+
+      <div :class="localeFlags(locales)+` icon-button`"
+        v-once
+        v-for="locales in availableLocales"
+        :key="locales"
+        @click="() => {locale = locales}"
+      >
       </div>
       <!-- Dates - Check out locales/en.json for the key -->
       <!-- Controls - I give you an .icon-button class if you want to use it -->
       <!-- Flags - the current locale -->
-      <div class="flex flex-col mt-4 whitespace-nowrap">
-        <span v-for="flag in flags"
-          v-once
-          :class="flag+' icon-button'"
-          @click="handleLocaleChange(flag)">
-          <span class="pl-10">
-            {{ getLanguage(getLocale(flag)) }}
-          </span>
-        </span>
-      </div>
-
     </section>
   </main>
 </template>

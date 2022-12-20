@@ -20,7 +20,7 @@ Translations are provided, though you can add your own!
 - [x] Render the number of days until Christmas.
 - [x] Localize the number of days until Christmas (`days`).
 - [x] Localize the entire `christmasIsComing` string with the `date` and `time` values to include joining particles ("{ date } is in { time }" or "{date}はあと{time}" -- notice there are no spaces in Japanese 🤔)
-- [ ] Style the `time` part of the `christmasIsComing` string. (Hint: use `i18n-t` and the slot syntax)
+- [x] Style the `time` part of the `christmasIsComing` string. (Hint: use `i18n-t` and the slot syntax)
 
 ### Libraries and Structure
 
