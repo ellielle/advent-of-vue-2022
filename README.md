@@ -1,8 +1,4 @@
-# Advent Of Vue 2022
-
-## If you didn't get here from an email, read this section! Skip it otherwise.
-
-[Advent Of Vue](https://adventofvue.com) is a series of 24 Vue coding challenges that are sent out every day from December 1 to December 24 via [a dedicated newsletter](https://www.getrevue.co/profile/AdventOfVue). If you'd like to receive more of these puzzles in the future, go ahead and sign up!
+# Solution for day 8
 
 ## Problem Description
 
@@ -32,23 +28,11 @@ You'll be editing `App.vue`. You don't really need anything below except for Vue
 
 1. We're using Vue i18n for localization. [Vue i18n docs are here](https://vue-i18n.intlify.dev/)
 1. Locales are provided within the `locales` directory.
-1. Messages are loaded within `main.js` for you.
+1. Messages are loaded within `main.ts` for you.
 1. Each `*.json` file maps to a locale.
 1. If you want to add your own language, you can!
 1. Check out the Vite config if you'd like to see how that works.
 1. [VueUse](https://vueuse.org/) is included. I ended up using it in the final solution, but it's not necessary.
-
-#### VSCode Setup
-
-1. Using the VSCode plugin [i18n Ally](https://github.com/lokalise/i18n-ally) is suggested -- it displays your translations inside of your editor!
-
-    <img src="./i18n-example-2.png" width="200"/><img src="./i18n-example.png" width="200" style="margin-bottom: 30px;"/>
-1. This project is using [Icones](https://icones.js.org/collection/twemoji?s=cast) + UnoCSS for icons.
-1. Try out the VSCode Plugin [Iconify IntelliSense](https://github.com/antfu/vscode-iconify)
-
-    <img src="./iconify-intellisense-example.png" width="200"/>
-
-1. This allows you to use fancy icons... but you can also just use emojis :P
 
 ### When IS Christmas?
 
