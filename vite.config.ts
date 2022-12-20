@@ -48,11 +48,9 @@ export default defineConfig({
     }),
     VueI18nPlugin({
       include: resolve(dirname(fileURLToPath(import.meta.url)), "./locales/**")
-    }),
+    })
   ],
   resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url))
-    }
+    alias: [{ find: "@", replacement: "/src" }]
   }
 });

@@ -13,6 +13,7 @@ import messages from '@intlify/vite-plugin-vue-i18n/messages'
 const i18n = createI18n({
   locale: 'en',
   messages,
+  legacy: false,
   datetimeFormats: {
     en: {
       short: {

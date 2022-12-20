@@ -2,6 +2,5 @@
   "language": "Deutsch",
   "happyHolidays": "Schöne Ferien!",
   "christmasIsComing": "{ date } ist in { time }",
-  "day": "ein Tag | {count} Tagen",
-  "flag": ""
+  "day": "ein Tag | {count} Tagen"
 }
