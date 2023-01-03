@@ -11,7 +11,7 @@
   ></div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // Not important for the challenge, but some math fun:
 // Math.random() gives us in the range [0...1] so we multiply
 // so we can get a range [0...AMPLIFY].

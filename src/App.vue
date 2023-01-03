@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ChristmasTree from './ChristmasTree.vue'
 import ChristmasLights from './ChristmasLights.vue'
 </script>
